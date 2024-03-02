@@ -31,7 +31,7 @@
   width: 147px;
 }
 
-@media (max-width: 590px) {
+@media (max-width: 840px) {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -39,10 +39,7 @@
     background-color: #FFFFFF;
     font-size: 18px;
     line-height: 19px;
-    font-family: "Darker Grotesque", sans-serif;
-    font-weight: 700;
     height: 72px;
-    padding: 24px 20px 24px 20px;
     width: 100%;
     position: fixed;
   }

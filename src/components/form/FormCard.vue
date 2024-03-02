@@ -1,23 +1,32 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <div class="form-group">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" v-model="formData.name">
-    </div>
-    <div class="form-group">
-      <div class="form-group-inner">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" v-model="formData.email">
+  <div class="container">
+    <form>
+      <div>
+        <p class="paragraph-form">Nome*</p>
+        <input type="text" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
       </div>
-      <div class="form-group-inner">
-        <label for="phone">Telefone:</label>
-        <input type="tel" id="phone" v-model="formData.phone">
+      <div class="form-inner">
+        <div>
+          <p class="paragraph-form">Telefone*</p>
+          <input type="tel" v-model="formData.phone" placeholder="(00) 0 0000-0000" class="input-form" />
+        </div>
+        <div>
+          <p class="paragraph-form">E-mail*</p>
+          <input type="email" v-model="formData.email" placeholder="nome@email.com" class="input-form" />
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <button type="submit">Enviar</button>
-    </div>
-  </form>
+      <div>
+        <ul class="list-style">
+          <li class="list-form">Ao preencher o formulário, concordo * em receber comunicações de acordo com meus interesses.</li>
+          <li class="list-form">Ao informar meus dados, eu concordo com a Política de privacidade.</li>
+        </ul>
+        <p class="list-form">* Você pode alterar suas permissões de comunicação a qualquer tempo.</p>
+      </div>
+      <div>
+        <button @click="submitForm" class="button-generate">GERAR CARTÃO GRÁTIS</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -40,29 +49,47 @@ export default {
 };
 </script>
 
-<style>
-.form-group {
-  margin-bottom: 15px;
+<style scoped>
+.container {
+  display: inline-flex;
+  width: 620px;
+  height: 336px;
+}
+
+.paragraph-form {
+  color: #FFFFFF;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.input-form {
+  height: 36px;
+  width: 100%;
+}
+
+.form-inner {
   display: flex;
   justify-content: space-between;
 }
 
-.form-group-inner {
-  width: calc(50% - 5px);
+.list-style {
+  padding-left: 25px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
+.list-form {
+  color: #FFFFFF;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
 }
 
-.form-group input {
+.button-generate {
   width: 100%;
-  padding: 5px;
-}
-
-.form-group button {
-  width: auto;
-  cursor: pointer;
+  height: 48px;
+  background-color: #F2BF4E;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
 }
 </style>
