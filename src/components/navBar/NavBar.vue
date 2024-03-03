@@ -1,9 +1,7 @@
 <template>
   <nav class="navbar">
-    <div class="navbar-left">
-      <img src="@/assets/logo-rd-station-default.svg" alt="LogoRD" />
-    </div>
-    <div>
+    <div class="navbar-content">
+      <img src="@/assets/logo-rd-station-default.svg" alt="LogoRD" class="navbar-img" />
       <p>Gerador de Cartão de Visita</p>
     </div>
   </nav>
@@ -12,39 +10,36 @@
 <style scoped>
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   background-color: #FFFFFF;
   font-size: 24px;
   line-height: 26px;
   font-family: "Darker Grotesque", sans-serif;
   font-weight: 700;
   height: 84px;
-  padding: 24px 80px 24px 80px;
   width: 100%;
-  position: fixed;
-  top: 0;
   box-sizing: border-box;
 }
 
-.navbar-left img {
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+}
+
+.navbar-img {
   width: 147px;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 600px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FFFFFF;
     font-size: 18px;
     line-height: 19px;
     height: 72px;
-    width: 100%;
-    position: fixed;
   }
 
-  .navbar-left img {
+  .navbar-img {
     width: 100px;
   }
 }
