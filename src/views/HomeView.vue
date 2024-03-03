@@ -50,19 +50,20 @@ body {
 
 .content-center {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 1280px;
   width: 90vw;
+  column-gap: 100px;
 }
 
 .img-rd {
-  max-width: 90vw;
+  max-width: 75vw;
 }
 
 @media (max-width: 600px) {
   .content {
-    height: calc(100vh - 74px);
+    height: auto;
     margin-top: 20px;
   }
 }

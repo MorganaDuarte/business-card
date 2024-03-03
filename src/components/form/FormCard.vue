@@ -50,6 +50,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 620px;
+  max-width: 90vw;
 }
 
 .paragraph-form {
@@ -67,6 +69,11 @@ export default {
 .form-inner {
   display: flex;
   flex-wrap: wrap;
+}
+
+.list-style {
+  list-style-position: inside;
+  padding-left: 10px;
 }
 
 .list-form {
