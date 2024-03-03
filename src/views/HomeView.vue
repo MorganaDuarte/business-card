@@ -3,7 +3,9 @@
   <div class="content">
     <InitialText />
     <div class="content-center">
-      <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
+      <div>
+        <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
+      </div>
       <FormCard @formData="handleFormData" />
 <!--        <BusinessCard :dataCard="dataCard" />-->
     </div>
@@ -42,21 +44,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 84px);
+  gap: 44px;
 }
 
 .content-center {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  height: 347px;
   flex-wrap: wrap;
-  width: 1281px;
+  max-width: 1280px;
+  width: 90vw;
 }
 
 .img-rd {
-  width: 471px;
-  height: 347px;
-  margin-top: 14px;
+  max-width: 90vw;
+}
+
+@media (max-width: 600px) {
+  .content {
+    height: auto;
+    margin-top: 20px;
+  }
 }
 </style>

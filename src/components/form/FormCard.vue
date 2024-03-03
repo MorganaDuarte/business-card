@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form class="form-container">
     <label class="paragraph-form">Nome*</label>
     <input type="text" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
     <div class="form-inner">
@@ -46,6 +46,12 @@ export default {
 </script>
 
 <style scoped>
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .paragraph-form {
   color: #FFFFFF;
   font-family: "Nunito Sans", sans-serif;

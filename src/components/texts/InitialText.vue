@@ -9,9 +9,9 @@
 
 <style scoped>
 .card {
-  max-width: 840px;
   width: 90vw;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
@@ -22,6 +22,8 @@
   font-family: "Red Hat Display", sans-serif;
   font-weight: 700;
   font-size: 40px;
+  text-align: center;
+  margin: 0;
 }
 
 .paragraph {
