@@ -62,7 +62,7 @@ body {
 
 @media (max-width: 600px) {
   .content {
-    height: auto;
+    height: calc(100vh - 74px);
     margin-top: 20px;
   }
 }
