@@ -2,14 +2,16 @@
   <form class="form-container" @submit.prevent="submitForm">
     <label class="paragraph-form">Nome*</label>
     <input type="text" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
+    <span v-if="invalidName" class="warning-text">O nome deve possuir pelo menos dois caracteres.</span>
     <div class="form-inner">
       <div>
         <label class="paragraph-form">Telefone*</label>
-        <input type="tel" v-model="formData.phone" placeholder="(00) 0 0000-0000" class="input-form" />
+        <input type="text" v-model="formData.phone" placeholder="(00) 0000[0]-0000" class="input-form" />
       </div>
       <div>
         <label class="paragraph-form">E-mail*</label>
         <input type="email" v-model="formData.email" placeholder="nome@email.com" class="input-form" />
+        <span v-if="invalidEmail" class="warning-text">Deve ser um e-mail válido.</span>
       </div>
     </div>
     <div>
@@ -22,7 +24,7 @@
       <p class="list-form">* Você pode alterar suas permissões de comunicação a qualquer tempo.</p>
     </div>
     <div>
-      <button type="submit" class="button-generate">
+      <button type="submit" class="button-generate" :disabled="formInvalid">
         GERAR CARTÃO GRÁTIS
         <i class="fa-solid fa-right-long icon-arrow-right"></i>
       </button>
@@ -41,6 +43,20 @@ export default {
         phone: ''
       }
     };
+  },
+  computed: {
+    invalidName() {
+      return this.formData.name.length > 0 && this.formData.name.length <= 2;
+    },
+    invalidEmail() {
+      const regex = /^\w+([.-]?\w+)@\w+([.-]?\w+)(\.\w{2,3})+$/;
+
+      return this.formData.email.length > 0 && !regex.test(this.formData.email);
+    },
+    formInvalid() {
+      return (!this.formData.name.length || this.invalidName) ||
+          (!this.formData.email.length || this.invalidEmail)
+    }
   },
   methods: {
     submitForm() {
@@ -107,6 +123,13 @@ export default {
 
 .icon-arrow-right {
   padding-left: 10px;
+}
+
+.warning-text {
+  color: #FFFFFF;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 @media (max-width: 600px) {
