@@ -15,7 +15,7 @@
       </div>
     </div>
     <div>
-      <button class="download-card-button">
+      <button class="download-card-button" :disabled="true">
         <i class="fa-solid fa-down-long icon-download"></i>
         BAIXAR CARTÃO
       </button>
@@ -105,9 +105,6 @@ export default {
   font-size: 16px;
   background-color: #E1E4E8;
   color: #97A1AC;
-  opacity: 0.8;
-  cursor: not-allowed;
-  pointer-events: none;
 }
 
 .style-link {
