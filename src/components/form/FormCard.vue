@@ -117,6 +117,10 @@ export default {
   font-size: 16px;
 }
 
+.button-generate:hover {
+  background-color: #F8DCA0;
+}
+
 .policy-link {
   color: #FFFFFF;
 }
