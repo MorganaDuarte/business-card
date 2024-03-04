@@ -3,7 +3,7 @@
   <div class="content">
     <InitialText v-if="showForm" />
     <div class="content-center">
-      <div>
+      <div v-if="isNotCardOnMobile">
         <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
       </div>
       <FormCard v-if="showForm" @formData="handleFormData" />
@@ -24,6 +24,14 @@ export default {
     return {
       dataCard: {},
       showForm: true
+    }
+  },
+  computed: {
+    isNotCardOnMobile() {
+      const screenWidth = window.innerWidth;
+      console.log(screenWidth)
+
+      return screenWidth > 600 || this.showForm;
     }
   },
   methods: {
