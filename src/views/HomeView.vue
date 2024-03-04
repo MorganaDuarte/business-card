@@ -1,13 +1,13 @@
 <template>
   <NavBar />
   <div class="content">
-    <InitialText />
+    <InitialText v-if="hasDataCard" />
     <div class="content-center">
       <div>
         <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
       </div>
-      <FormCard @formData="handleFormData" />
-<!--        <BusinessCard :dataCard="dataCard" />-->
+      <FormCard v-if="hasDataCard" @formData="handleFormData" @backButton="clearForm" />
+      <BusinessCard v-else :dataCard="dataCard" />
     </div>
   </div>
 </template>
@@ -24,6 +24,14 @@ export default {
     return {
       dataCard: {}
     }
+  },
+  computed: {
+    hasDataCard() {
+      return Object.keys(this.dataCard).length === 0;
+    }
+  },
+  watch: {
+
   },
   methods: {
     handleFormData(formData) {
@@ -65,10 +73,6 @@ body {
   .content {
     height: auto;
     margin-top: 20px;
-  }
-
-  .img-rd {
-    display: none;
   }
 }
 </style>

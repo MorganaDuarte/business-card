@@ -95,7 +95,6 @@ export default {
 }
 
 .policy-link {
-  text-decoration: none;
   color: #FFFFFF;
 }
 </style>
