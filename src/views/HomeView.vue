@@ -29,7 +29,6 @@ export default {
   computed: {
     isNotCardOnMobile() {
       const screenWidth = window.innerWidth;
-      console.log(screenWidth)
 
       return screenWidth > 600 || this.showForm;
     }
