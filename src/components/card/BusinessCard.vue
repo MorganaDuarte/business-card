@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <button class="back-button">< Gerar outro cartão</button>
+    <button class="back-button" @click="generateAnotherCard">< Gerar outro cartão</button>
     <div class="card">
       <div class="container">
         <div class="container-img-logo">
@@ -30,6 +30,11 @@ export default {
     dataCard: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    generateAnotherCard() {
+      this.$emit('back')
     }
   }
 }

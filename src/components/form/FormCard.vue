@@ -1,5 +1,5 @@
 <template>
-  <form class="form-container">
+  <form class="form-container" @submit.prevent="submitForm">
     <label class="paragraph-form">Nome*</label>
     <input type="text" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
     <div class="form-inner">
@@ -22,7 +22,7 @@
       <p class="list-form">* Você pode alterar suas permissões de comunicação a qualquer tempo.</p>
     </div>
     <div>
-      <button @click="submitForm" class="button-generate">GERAR CARTÃO GRÁTIS</button>
+      <button type="submit" class="button-generate">GERAR CARTÃO GRÁTIS</button>
     </div>
   </form>
 </template>
