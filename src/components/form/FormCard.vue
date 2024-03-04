@@ -73,7 +73,11 @@ export default {
 
 .form-inner {
   display: flex;
-  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-inner div {
+  width: 100%;
 }
 
 .list-style {
@@ -103,5 +107,11 @@ export default {
 
 .icon-arrow-right {
   padding-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .form-inner {
+    display: block;
+  }
 }
 </style>
