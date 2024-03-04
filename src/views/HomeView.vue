@@ -66,5 +66,9 @@ body {
     height: auto;
     margin-top: 20px;
   }
+
+  .img-rd {
+    display: none;
+  }
 }
 </style>
