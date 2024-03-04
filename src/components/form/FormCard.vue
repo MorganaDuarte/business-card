@@ -6,7 +6,8 @@
     <div class="form-inner">
       <div>
         <label class="paragraph-form">Telefone*</label>
-        <input type="text" v-model="formData.phone" placeholder="(00) 0000[0]-0000" class="input-form" />
+        <input type="text" v-model="formData.phone" v-mask="[phoneMask]" placeholder="(00) 0000[0]-0000" class="input-form" />
+        <span v-if="invalidPhone" class="warning-text">O telefone deve ser um número válido.</span>
       </div>
       <div>
         <label class="paragraph-form">E-mail*</label>
@@ -33,8 +34,11 @@
 </template>
 
 <script>
+import { mask } from 'vue-the-mask';
+
 export default {
   emits: ['formData'],
+  directives: {mask},
   data() {
     return {
       formData: {
@@ -53,9 +57,26 @@ export default {
 
       return this.formData.email.length > 0 && !regex.test(this.formData.email);
     },
+    invalidPhone() {
+      return this.formData.phone.length > 0 && this.formData.phone.length <= 8;
+    },
+    phoneMask() {
+      const phone = this.formData.phone.replace(/[^0-9]/g, "")?.length;
+
+      if(phone === 11) {
+        return "(##) #####-####";
+      } else if(phone === 10) {
+        return "(##) ####-####"
+      } else if(phone === 9) {
+        return "#####-####"
+      } else {
+        return "####-####"
+      }
+    },
     formInvalid() {
       return (!this.formData.name.length || this.invalidName) ||
-          (!this.formData.email.length || this.invalidEmail)
+          (!this.formData.email.length || this.invalidEmail) ||
+          (!this.formData.phone.length || this.invalidPhone)
     }
   },
   methods: {
