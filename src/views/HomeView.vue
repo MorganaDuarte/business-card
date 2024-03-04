@@ -7,7 +7,7 @@
         <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
       </div>
       <FormCard v-if="showForm" @formData="handleFormData" />
-      <BusinessCard v-else :dataCard="dataCard" />
+      <BusinessCard v-else :dataCard="dataCard" @back="showForm = true" />
     </div>
   </div>
 </template>

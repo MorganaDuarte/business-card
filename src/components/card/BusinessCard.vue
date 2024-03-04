@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     generateAnotherCard() {
-      this.$emit('back')
+      this.$emit('back');
     }
   }
 }
