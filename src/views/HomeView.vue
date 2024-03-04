@@ -7,7 +7,7 @@
         <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
       </div>
       <FormCard v-if="showForm" @formData="handleFormData" />
-      <BusinessCard v-else :dataCard="dataCard" @backButton="test" />
+      <BusinessCard v-else :dataCard="dataCard" />
     </div>
   </div>
 </template>
@@ -29,6 +29,7 @@ export default {
   methods: {
     handleFormData(formData) {
       this.dataCard = formData;
+      this.showForm = false;
     }
   }
 }

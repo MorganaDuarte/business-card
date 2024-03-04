@@ -15,10 +15,14 @@
       </div>
     </div>
     <div>
-      <button class="download-card-button">BAIXAR CARTÃO</button>
+      <button class="download-card-button">
+        <i class="fa-solid fa-down-long icon-download"></i>
+        BAIXAR CARTÃO
+      </button>
     </div>
     <a href="https://app.rdstation.com.br/signup" target="_blank" class="style-link">
       FAZER UM TESTE GRÁTIS DO RD STATION MARKETING
+      <i class="fa-solid fa-right-long icon-arrow-right"></i>
     </a>
   </div>
 </template>
@@ -113,5 +117,13 @@ export default {
   text-decoration: none;
   color: #FFFFFF;
   text-align: center;
+}
+
+.icon-download {
+  padding-right: 10px;
+}
+
+.icon-arrow-right {
+  padding-left: 10px;
 }
 </style>

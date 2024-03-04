@@ -22,7 +22,10 @@
       <p class="list-form">* Você pode alterar suas permissões de comunicação a qualquer tempo.</p>
     </div>
     <div>
-      <button type="submit" class="button-generate">GERAR CARTÃO GRÁTIS</button>
+      <button type="submit" class="button-generate">
+        GERAR CARTÃO GRÁTIS
+        <i class="fa-solid fa-right-long icon-arrow-right"></i>
+      </button>
     </div>
   </form>
 </template>
@@ -96,5 +99,9 @@ export default {
 
 .policy-link {
   color: #FFFFFF;
+}
+
+.icon-arrow-right {
+  padding-left: 10px;
 }
 </style>
