@@ -15,7 +15,9 @@
     <div>
       <ul class="list-style">
         <li class="list-form">Ao preencher o formulário, concordo * em receber comunicações de acordo com meus interesses.</li>
-        <li class="list-form">Ao informar meus dados, eu concordo com a Política de privacidade.</li>
+        <li class="list-form">
+          Ao informar meus dados, eu concordo com a <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank" class="policy-link">Política de privacidade.</a>
+        </li>
       </ul>
       <p class="list-form">* Você pode alterar suas permissões de comunicação a qualquer tempo.</p>
     </div>
@@ -90,5 +92,10 @@ export default {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
   font-size: 16px;
+}
+
+.policy-link {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 </style>
