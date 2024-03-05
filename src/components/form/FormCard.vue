@@ -151,10 +151,10 @@ export default {
 }
 
 .warning-text {
-  color: #FFFFFF;
+  color: #BDBDBD;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media (max-width: 600px) {
