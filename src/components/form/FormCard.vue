@@ -106,6 +106,7 @@ export default {
 .input-form {
   height: 36px;
   width: 100%;
+  outline-color: #806EFF;
 }
 
 .warning-text {
