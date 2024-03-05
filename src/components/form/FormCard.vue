@@ -52,14 +52,6 @@ export default {
     invalidName() {
       return this.formData.name.length > 0 && this.formData.name.length <= 2;
     },
-    invalidEmail() {
-      const regex = /^\w+([.-]?\w+)@\w+([.-]?\w+)(\.\w{2,3})+$/;
-
-      return this.formData.email.length > 0 && !regex.test(this.formData.email);
-    },
-    invalidPhone() {
-      return this.formData.phone.length > 0 && this.formData.phone.length <= 8;
-    },
     phoneMask() {
       const phone = this.formData.phone.replace(/[^0-9]/g, "")?.length;
 
@@ -72,6 +64,14 @@ export default {
       } else {
         return "####-####"
       }
+    },
+    invalidPhone() {
+      return this.formData.phone.length > 0 && this.formData.phone.length <= 8;
+    },
+    invalidEmail() {
+      const regexEmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(\.\w{2,3})+$/;
+
+      return this.formData.email.length > 0 && !regexEmail.test(this.formData.email);
     },
     formInvalid() {
       return (!this.formData.name.length || this.invalidName) ||
@@ -108,6 +108,13 @@ export default {
   width: 100%;
 }
 
+.warning-text {
+  color: #BDBDBD;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
 .form-inner {
   display: flex;
   gap: 20px;
@@ -129,6 +136,10 @@ export default {
   font-size: 12px;
 }
 
+.policy-link {
+  color: #FFFFFF;
+}
+
 .button-generate {
   width: 100%;
   height: 48px;
@@ -142,19 +153,8 @@ export default {
   background-color: #F8DCA0;
 }
 
-.policy-link {
-  color: #FFFFFF;
-}
-
 .icon-arrow-right {
   padding-left: 10px;
-}
-
-.warning-text {
-  color: #BDBDBD;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
 }
 
 @media (max-width: 600px) {

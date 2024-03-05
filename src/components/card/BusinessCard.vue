@@ -3,7 +3,7 @@
     <button class="back-button" @click="generateAnotherCard">< Gerar outro cartão</button>
     <div class="card">
       <div class="container">
-        <div class="container-img-logo">
+        <div>
           <img src="@/assets/symbol-rd-station-default.svg" alt="lading-page" class="img-logo">
         </div>
         <hr class="hr-line"/>
@@ -80,15 +80,15 @@ export default {
   width: 90%;
 }
 
+.img-logo {
+  width: 70px;
+  height: 60px;
+}
+
 .hr-line {
   height: 75%;
   border-color: #D8D9FD;
   margin: 0;
-}
-
-.img-logo {
-  width: 70px;
-  height: 60px;
 }
 
 .paragraph-card {
