@@ -1,8 +1,10 @@
 <template>
   <form class="form-container" @submit.prevent="submitForm">
-    <label for="formData.name" class="label-form">Nome*</label>
-    <input type="text" id="formData.name" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
-    <span v-if="invalidName" class="warning-text">O nome deve possuir pelo menos dois caracteres.</span>
+    <div>
+      <label for="formData.name" class="label-form">Nome*</label>
+      <input type="text" id="formData.name" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
+      <span v-if="invalidName" class="warning-text">O nome deve possuir pelo menos dois caracteres.</span>
+    </div>
     <div class="form-inner">
       <div>
         <label for="formData.phone" class="label-form">Telefone*</label>
