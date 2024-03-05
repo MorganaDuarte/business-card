@@ -1,7 +1,7 @@
 <template>
   <NavBar />
   <div class="content">
-    <InitialText v-if="showForm" />
+    <TitleText v-if="showForm" />
     <div class="content-center">
       <div v-if="isNotCardOnMobile">
         <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
@@ -14,12 +14,12 @@
 
 <script>
 import NavBar from "@/components/navBar/NavBar.vue";
-import InitialText from "@/components/texts/InitialText.vue";
+import TitleText from "@/components/texts/TitleText.vue";
 import FormCard from "@/components/form/FormCard.vue";
 import BusinessCard from "@/components/card/BusinessCard.vue";
 
 export default {
-  components: { NavBar, InitialText, FormCard, BusinessCard },
+  components: { NavBar, TitleText, FormCard, BusinessCard },
   data() {
     return {
       dataCard: {},
