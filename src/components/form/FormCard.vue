@@ -1,17 +1,17 @@
 <template>
   <form class="form-container" @submit.prevent="submitForm">
-    <label class="paragraph-form">Nome*</label>
-    <input type="text" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
+    <label for="formData.name" class="paragraph-form">Nome*</label>
+    <input type="text" id="formData.name" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
     <span v-if="invalidName" class="warning-text">O nome deve possuir pelo menos dois caracteres.</span>
     <div class="form-inner">
       <div>
-        <label class="paragraph-form">Telefone*</label>
-        <input type="text" v-model="formData.phone" v-mask="[phoneMask]" placeholder="(00) 0000[0]-0000" class="input-form" />
+        <label for="formData.phone" class="paragraph-form">Telefone*</label>
+        <input type="text" id="formData.phone" v-model="formData.phone" v-mask="[phoneMask]" placeholder="(00) 0000[0]-0000" class="input-form" />
         <span v-if="invalidPhone" class="warning-text">O telefone deve ser um número válido.</span>
       </div>
       <div>
-        <label class="paragraph-form">E-mail*</label>
-        <input type="email" v-model="formData.email" placeholder="nome@email.com" class="input-form" />
+        <label for="formData.email" class="paragraph-form">E-mail*</label>
+        <input type="email" id="formData.email" v-model="formData.email" placeholder="nome@email.com" class="input-form" />
         <span v-if="invalidEmail" class="warning-text">Deve ser um e-mail válido.</span>
       </div>
     </div>
