@@ -1,16 +1,16 @@
 <template>
   <form class="form-container" @submit.prevent="submitForm">
-    <label for="formData.name" class="paragraph-form">Nome*</label>
+    <label for="formData.name" class="label-form">Nome*</label>
     <input type="text" id="formData.name" v-model="formData.name" placeholder="Nome e Sobrenome" class="input-form"/>
     <span v-if="invalidName" class="warning-text">O nome deve possuir pelo menos dois caracteres.</span>
     <div class="form-inner">
       <div>
-        <label for="formData.phone" class="paragraph-form">Telefone*</label>
+        <label for="formData.phone" class="label-form">Telefone*</label>
         <input type="text" id="formData.phone" v-model="formData.phone" v-mask="[phoneMask]" placeholder="(00) 0000[0]-0000" class="input-form" />
         <span v-if="invalidPhone" class="warning-text">O telefone deve ser um número válido.</span>
       </div>
       <div>
-        <label for="formData.email" class="paragraph-form">E-mail*</label>
+        <label for="formData.email" class="label-form">E-mail*</label>
         <input type="email" id="formData.email" v-model="formData.email" placeholder="nome@email.com" class="input-form" />
         <span v-if="invalidEmail" class="warning-text">Deve ser um e-mail válido.</span>
       </div>
@@ -96,7 +96,7 @@ export default {
   max-width: 90vw;
 }
 
-.paragraph-form {
+.label-form {
   color: #FFFFFF;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;

@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <h1 class="title">Gerador de Cartão de Visita</h1>
-    <h2 class="paragraph">
+    <h2 class="subtitle">
       Crie grátis seu cartão de visita em passos rápidos! Você o insere no Instagram e demais canais digitais.
     </h2>
   </div>
@@ -26,7 +26,7 @@
   margin: 0;
 }
 
-.paragraph {
+.subtitle {
   color: #FFFFFF;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
@@ -40,7 +40,7 @@
     font-size: 24px;
   }
 
-  .paragraph {
+  .subtitle {
     font-size: 16px;
   }
 }

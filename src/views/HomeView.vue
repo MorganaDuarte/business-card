@@ -1,12 +1,12 @@
 <template>
   <NavBar />
-  <div class="content">
+  <div class="global-content">
     <TitleText v-if="showForm" />
-    <div class="content-center">
+    <div class="global-content-center">
       <div v-if="isNotCardOnMobile">
         <img src="../assets/img-rd.png" alt="lading-page" class="img-rd">
       </div>
-      <FormCard v-if="showForm" @formData="handleFormData" />
+      <FormCard v-if="showForm" @formData="setDataCard" />
       <BusinessCard v-else :dataCard="dataCard" @back="showForm = true" />
     </div>
   </div>
@@ -34,7 +34,7 @@ export default {
     }
   },
   methods: {
-    handleFormData(formData) {
+    setDataCard(formData) {
       this.dataCard = formData;
       this.showForm = false;
     }
@@ -48,7 +48,7 @@ body {
   background-image: linear-gradient(to right, #6C5AE0, #806EFF);
 }
 
-.content {
+.global-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +57,7 @@ body {
   gap: 44px;
 }
 
-.content-center {
+.global-content-center {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -71,7 +71,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  .content {
+  .global-content {
     height: auto;
     margin-top: 20px;
   }
