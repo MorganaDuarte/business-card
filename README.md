@@ -1,7 +1,7 @@
 # Business Card
 
 Gerador automático de cartão de visita.
-Criado para desafio RD Station.
+Você insere seu nome, e-mail e telefone e é gerado um cartão. Nesse momento não é possível baixar o cartão.
 
 Para rodar:
 
